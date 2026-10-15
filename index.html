@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three LiDARs, Twenty-Five Datasets · WACV 2027</title>
+  <meta name="description" content="Cross-source generalization in LiDAR tree-species recognition on FOR-species20K: a first-place model (85.0% hidden-test accuracy) and a protocol that shows accuracy falling from 95% to 60% on unseen sources.">
+  <meta name="theme-color" content="#050607">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Three LiDARs, Twenty-Five Datasets (WACV 2027)">
+  <meta property="og:description" content="Cross-Source Generalization in Tree-Species Recognition. 85.0% on the FOR-species20K hidden test; 95% to 60% on unseen sources.">
+  <meta property="og:image" content="https://jaelee18.github.io/wacv27_forspecies20k/static/img/social.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050607'/%3E%3Cg fill='%2330d159'%3E%3Ccircle cx='16' cy='6' r='2'/%3E%3Ccircle cx='12' cy='11' r='2'/%3E%3Ccircle cx='20' cy='11' r='2'/%3E%3Ccircle cx='8' cy='16' r='2'/%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='24' cy='16' r='2'/%3E%3C/g%3E%3Crect x='14.5' y='19' width='3' height='9' rx='1.5' fill='%2363d1ff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <a class="brand" href="#top">Three LiDARs, Twenty-Five Datasets</a>
+  <nav>
+    <a href="#film">Video</a>
+    <a href="#abstract">Abstract</a>
+    <a href="#explore">Explore</a>
+    <a href="#results">Results</a>
+    <a href="#apps">Apps</a>
+    <a href="#bibtex">BibTeX</a>
+  </nav>
+</div>
+
+<header class="hero" id="top">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <span class="venue"><span class="dot"></span><b>WACV 2027</b>&nbsp;·&nbsp;Evaluations &amp; Datasets track</span>
+    <h1>Three LiDARs,<br><span class="grad">Twenty-Five Datasets</span></h1>
+    <p class="subtitle">Cross-Source Generalization in Tree-Species Recognition</p>
+    <div class="authors"><span>Jae Joong Lee</span><span>Bedrich Benes</span></div>
+    <p class="affil">Purdue University</p>
+    <nav class="buttons" aria-label="Links">
+      <a class="btn disabled" aria-disabled="true" title="arXiv link coming soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        Paper <small>arXiv soon</small></a>
+      <a class="btn primary" href="https://github.com/JaeLee18/FOR20K-lidar-tree-species">
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Code</a>
+      <a class="btn" href="https://drive.google.com/drive/folders/17avKbgHfTMpGV1Nlq8Yaz4-u7p1lvKtq">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Weights</a>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.13255198">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg>
+        Dataset</a>
+      <a class="btn" href="#film">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>
+        Video</a>
+      <a class="btn" href="#bibtex">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4c-2 1.3-3 3.5-3 6.5V19h5v-6H7M19 4c-2 1.3-3 3.5-3 6.5V19h5v-6h-3"/></svg>
+        BibTeX</a>
+    </nav>
+  </div>
+  <a class="scroll-cue" href="#film" aria-label="Scroll to the video"></a>
+</header>
+
+<main>
+
+<section class="film" id="film">
+  <div class="wrap">
+    <div class="video-frame reveal">
+      <video id="film-video" src="static/media/film.mp4" poster="static/media/poster.jpg" controls playsinline muted loop preload="metadata"></video>
+    </div>
+    <p class="caption">85 seconds, with sound. Every prediction in the film is a held-out prediction.</p>
+
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="num grad" data-count="85.0" data-suffix="%" data-decimals="1">85.0%</div>
+        <p>overall accuracy on the official FOR-species20K hidden test, first on the leaderboard (previous best 79.5%)</p>
+      </div>
+      <div class="stat reveal">
+        <div class="num">95% <span class="arrow">→</span> <span class="red">60%</span></div>
+        <p>accuracy on the same trees once their source dataset is held out of training for their species</p>
+      </div>
+      <div class="stat reveal">
+        <div class="num" data-count="17707" data-decimals="0">17,707</div>
+        <p>labeled trees from 25 source datasets: 33 species, scanned by 3 kinds of LiDAR</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="abstract">
+  <div class="narrow abstract reveal">
+    <span class="eyebrow">Abstract</span>
+    <p>FOR-species20K is the largest public LiDAR benchmark for tree-species classification, but high leaderboard scores do not necessarily indicate that a model recognizes species across independently collected forests. The benchmark pools 25 terrestrial, mobile, and airborne laser-scanned datasets, uses a species-balanced hidden test, and splits data across sources with a species-stratified random draw. Using a multi-resolution multi-view ConvNeXtV2 model, we improve hidden-test accuracy from 79.5% to 85.0% and use this first-place model to test whether the official split reflects cross-source species recognition. The balanced hidden test makes official accuracy closer to a macro metric than to public-set overall accuracy. The random split also carries source information: source identity is recoverable from our output probabilities with 69% accuracy, and from raw geometry even within a single species, while 18 of 33 species appear in only one source dataset. Under a source–species holdout, in which each scored species keeps training examples of the same LiDAR type elsewhere, accuracy drops by 46% in the unweighted species mean and 35% in the tree-weighted mean. Retraining controls attribute the drop to the removal’s source structure rather than to reduced training support, and the pattern reproduces on PureForest, where holding out whole forests costs 9 points under matched support. FOR-species20K therefore exposes a harder problem: current models score well on the official split, while species recognition across sources remains open.</p>
+  </div>
+</section>
+
+<section id="benchmark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The benchmark</span>
+      <h2>Three kinds of LiDAR.<br>Twenty-five sources.</h2>
+      <p class="lede">Every source dataset in FOR-species20K comes from a single kind of scanner, collected by a different team in a different forest. A random split mixes them all, so a model can learn the source as well as the species.</p>
+    </div>
+    <div class="platforms">
+      <div class="platform reveal" style="--c: var(--tls)">
+        <span class="tag">TLS</span>
+        <h3>Terrestrial</h3>
+        <p class="how">Scanned from the ground</p>
+        <div class="counts"><div><b>16</b><span>datasets</span></div><div><b>12,485</b><span>trees</span></div></div>
+      </div>
+      <div class="platform reveal" style="--c: var(--mls)">
+        <span class="tag">MLS</span>
+        <h3>Mobile</h3>
+        <p class="how">Scanned on the move</p>
+        <div class="counts"><div><b>4</b><span>datasets</span></div><div><b>1,464</b><span>trees</span></div></div>
+      </div>
+      <div class="platform reveal" style="--c: var(--uls)">
+        <span class="tag">ULS</span>
+        <h3>Drone</h3>
+        <p class="how">Scanned from the sky</p>
+        <div class="counts"><div><b>5</b><span>datasets</span></div><div><b>3,758</b><span>trees</span></div></div>
+      </div>
+    </div>
+    <figure class="reveal">
+      <div class="figure"><img src="static/img/composition.png" alt="Bar charts: trees per source dataset coloured by LiDAR type, from 3,474 trees in BlueCat_a down to 43; and trees per species on a log scale, with the 18 species that occur in only one dataset highlighted" loading="lazy"></div>
+      <figcaption>Trees per source dataset, coloured by LiDAR type (left), and per species on a log scale (right). 18 of the 33 species occur in only one source dataset.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Method</span>
+      <h2>Seven views. Three backbones.</h2>
+      <p class="lede">A multi-view image model: each scan becomes seven geometric renders, read by three ConvNeXtV2 networks.</p>
+    </div>
+    <figure class="reveal">
+      <div class="figure"><img src="static/img/pipeline.png" alt="Pipeline: a tree point cloud is rendered into four side views, a top and bottom view, and a trunk-detail view; three ConvNeXtV2-Base backbones process the three view groups; features are max-pooled per group, concatenated with tree height, and classified by an MLP into 33 species" loading="lazy"></div>
+    </figure>
+    <ol class="steps">
+      <li class="reveal"><h3>Render</h3><p>Each tree becomes seven orthographic images: four sides, top, bottom, and a trunk slice. The three channels hold depth, point density, and height, not colour.</p></li>
+      <li class="reveal"><h3>Classify</h3><p>Three ConvNeXtV2-Base networks read the side, top and bottom, and trunk views. Their features are max-pooled per group, joined with tree height, and mapped to 33 species with a logit-adjusted loss for the rare ones.</p></li>
+      <li class="reveal"><h3>Average</h3><p>A prediction averages 20 augmented passes, five fold models, and two render sizes, 256 and 512 px.</p></li>
+    </ol>
+    <figure class="reveal" style="margin-top: 18px">
+      <div class="figure"><img src="static/img/renders_explained.png" alt="The seven renders of one tree (four sides, top, bottom, trunk detail) and the depth, log density, and height channels of one side view" loading="lazy"></div>
+      <figcaption>The seven renders of one tree (top row) and the three channels of its first side view (bottom row).</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Explore</span>
+      <h2>Spin a scan. See what the model says.</h2>
+      <p class="lede">Real FOR-species20K scans, with the predictions of a model that never trained on them. One of the eight is a mistake.</p>
+    </div>
+    <div class="viewer reveal">
+      <div class="stage" id="stage">
+        <canvas id="viewer-canvas"></canvas>
+        <div class="loading" id="viewer-loading">Loading scan…</div>
+        <div class="scale" id="viewer-scale"></div>
+        <div class="hint">Drag to rotate</div>
+      </div>
+      <div class="panel">
+        <div class="chips" id="chips" role="group" aria-label="Choose a tree"></div>
+        <span class="pred-label">Prediction</span>
+        <div class="pred-name" id="pred-name">&nbsp;</div>
+        <div class="verdict" id="verdict"></div>
+        <div class="bars" id="bars"></div>
+        <dl class="facts" id="facts"></dl>
+        <p class="note">Predictions are out-of-fold: each comes from the 256 px model of the fold that held the tree out. Points are subsampled to 50,000 for the browser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Results</span>
+      <h2>First on the leaderboard.</h2>
+      <p class="lede">Official FOR-species20K hidden test: species-balanced, scored by the benchmark’s organisers. By LiDAR type, our model scores 85.6% (TLS), 93.4% (MLS), and 79.2% (ULS).</p>
+    </div>
+    <div class="chart reveal" id="leaderboard">
+      <h3>Overall accuracy, hidden test</h3>
+      <p class="sub">%, higher is better. The axis starts at 50.</p>
+      <div id="hbars"></div>
+      <div class="axis"><span></span><span class="ticks"><span>50</span><span>60</span><span>70</span><span>80</span><span>90</span></span><span></span></div>
+    </div>
+
+    <div class="reveal" style="margin-top: 110px">
+      <h2>Same species. Unseen source.</h2>
+      <p class="lede">We score the same 5,566 trees twice: with the official random split, and with a model that never saw a tree from their (source, species) pair. Every scored species keeps at least 50 training trees of the same LiDAR type from other sources.</p>
+    </div>
+    <div class="gap-grid">
+      <div class="chart reveal" id="gap">
+        <h3>Accuracy on the same 5,566 trees</h3>
+        <p class="sub">Three backbones, tree-weighted. Averaged over species instead, ConvNeXtV2 falls from 81.5% to 36.0%.</p>
+        <div id="pairs"></div>
+      </div>
+      <figure class="reveal" style="margin: 0">
+        <div class="figure"><img src="static/img/protocol.png" alt="Grid of 25 source datasets by 33 species: training cells in blue, held-out scored cells in red, and held-out unscored sources in dark grey" loading="lazy"></div>
+        <figcaption>The source–species holdout for one fold. Red cells are scored by a model trained on everything else; the same species stays in training from other sources (blue).</figcaption>
+      </figure>
+    </div>
+    <ul class="controls reveal">
+      <li><b>Not a data-size effect.</b> Removing the same number of trees per species and LiDAR type at random across sources keeps 94.1% accuracy, against 44.8% for the source-structured removal in the same fold.</li>
+      <li><b>Not one bad dataset.</b> Leaving whole source datasets out changes the drop only from 42 to 37 points.</li>
+      <li><b>The source leaks.</b> The source dataset can be predicted from the 33 species probabilities alone with 69% accuracy (chance: 4%).</li>
+      <li><b>Not specific to FOR-species20K.</b> On PureForest, holding out whole forests costs 9 points under matched support.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="apps">
+  <div class="wrap">
+    <div class="reveal center">
+      <span class="eyebrow">Run it anywhere</span>
+      <h2>Command line, browser, or phone.</h2>
+      <p class="lede">The code ships with the trained weights, a self-hosted web app, and an Android app that works offline.</p>
+    </div>
+    <div class="apps">
+      <div class="app reveal">
+        <h3>Command line</h3>
+        <p>One scan or a whole folder, straight to a CSV file. The weights download on first use.</p>
+        <pre class="terminal"><span class="p">$</span> ./predict.sh examples/05554_Pinus_sylvestris_ULS.laz
+<span class="c">05554_Pinus_sylvestris_ULS.laz  (53,839 points, height 33.2 m)</span>
+  1. Pinus_sylvestris    <span class="ok">100.0%</span>
+  2. Larix_decidua         0.0%
+  3. Quercus_petraea       0.0%
+
+<span class="p">$</span> ./predict.sh scans/ -o predictions.csv</pre>
+      </div>
+      <div class="app reveal">
+        <h3>In your browser</h3>
+        <p>A self-hosted web app: drop in scans, keep the records, check them against field identifications, export to CSV.</p>
+        <div class="shot"><img src="static/img/web_overview.jpg" alt="The web app's records page with an upload area, a summary of agreement with verified species, and a table of predictions" loading="lazy"></div>
+      </div>
+      <div class="app wide reveal">
+        <h3>On your phone, offline</h3>
+        <p>An Android app with the model on the device, and field records with verified species, notes, and GPS position.</p>
+        <div class="shot"><img src="static/img/android_app.jpg" alt="Four Android screens: saved records, a prediction with its 3D view and top five species, a field record with GPS position, and dark mode" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bibtex">
+  <div class="narrow reveal">
+    <span class="eyebrow">Citation</span>
+    <h2>BibTeX</h2>
+    <div class="bib">
+      <button class="copy" type="button" data-copy="bib-paper">Copy</button>
+      <pre id="bib-paper">@inproceedings{lee2027threelidars,
+  title     = {Three LiDARs, Twenty-Five Datasets: Cross-Source
+               Generalization in Tree-Species Recognition},
+  author    = {Lee, Jae Joong and Benes, Bedrich},
+  booktitle = {IEEE/CVF Winter Conference on Applications of
+               Computer Vision (WACV)},
+  year      = {2027}
+}</pre>
+    </div>
+    <details>
+      <summary>Please also cite the FOR-species20K dataset</summary>
+      <div class="bib">
+        <button class="copy" type="button" data-copy="bib-data">Copy</button>
+        <pre id="bib-data">@article{puliti2025,
+  title   = {Benchmarking tree species classification from proximally
+             sensed laser scanning data: Introducing the
+             {FOR-species20K} dataset},
+  author  = {Puliti, Stefano and Lines, Emily R. and M{\"u}llerov{\'a}, Jana
+             and Frey, Julian and Schindler, Zoe and Straker, Adrian
+             and Allen, Matthew J. and Winiwarter, Lukas and Rehush,
+             Nataliia and Hristova, Hristina and others},
+  journal = {Methods in Ecology and Evolution},
+  volume  = {16},
+  number  = {4},
+  pages   = {801--818},
+  year    = {2025}
+}</pre>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Point clouds and labels: <a href="https://doi.org/10.5281/zenodo.13255198">FOR-species20K</a> (Puliti et al., 2025), GPL-3.0.</span>
+    <span><a href="https://github.com/JaeLee18/FOR20K-lidar-tree-species">Code</a> · <a href="https://drive.google.com/drive/folders/17avKbgHfTMpGV1Nlq8Yaz4-u7p1lvKtq">Weights</a> · <a href="https://doi.org/10.5281/zenodo.13255198">Dataset</a></span>
+  </div>
+</footer>
+
+<script src="static/js/main.js" defer></script>
+</body>
+</html>

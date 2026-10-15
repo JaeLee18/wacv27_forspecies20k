@@ -1,0 +1,250 @@
+[
+ {
+  "id": "00777",
+  "species": "Quercus_rubra",
+  "platform": "TLS",
+  "dataset": "Seidl_2021",
+  "height": 24.5,
+  "points": 84048,
+  "scale": 0.0007490462965788751,
+  "top5": [
+   [
+    "Quercus_rubra",
+    0.9913
+   ],
+   [
+    "Quercus_robur",
+    0.0087
+   ],
+   [
+    "Fraxinus_excelsior",
+    0.0
+   ],
+   [
+    "Populus_deltoides",
+    0.0
+   ],
+   [
+    "Eucalyptus_miniata",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "10313",
+  "species": "Acer_saccharum",
+  "platform": "TLS",
+  "dataset": "Xi_2020b",
+  "height": 24.2,
+  "points": 35324,
+  "scale": 0.0007388836329233681,
+  "top5": [
+   [
+    "Acer_saccharum",
+    1.0
+   ],
+   [
+    "Pinus_resinosa",
+    0.0
+   ],
+   [
+    "Populus_tremuloides",
+    0.0
+   ],
+   [
+    "Pinus_contorta",
+    0.0
+   ],
+   [
+    "Quercus_faginea",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "04977",
+  "species": "Larix_decidua",
+  "platform": "ULS",
+  "dataset": "Weiser_2022b",
+  "height": 31.3,
+  "points": 41380,
+  "scale": 0.0009537339396343883,
+  "top5": [
+   [
+    "Larix_decidua",
+    1.0
+   ],
+   [
+    "Pinus_sylvestris",
+    0.0
+   ],
+   [
+    "Prunus_avium",
+    0.0
+   ],
+   [
+    "Fagus_sylvatica",
+    0.0
+   ],
+   [
+    "Pinus_resinosa",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "12035",
+  "species": "Betula_pendula",
+  "platform": "MLS",
+  "dataset": "Puliti_a",
+  "height": 12.6,
+  "points": 434438,
+  "scale": 0.00038334299752800074,
+  "top5": [
+   [
+    "Betula_pendula",
+    1.0
+   ],
+   [
+    "Pinus_sylvestris",
+    0.0
+   ],
+   [
+    "Eucalyptus_miniata",
+    0.0
+   ],
+   [
+    "Populus_tremuloides",
+    0.0
+   ],
+   [
+    "Picea_abies",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "06076",
+  "species": "Pseudotsuga_menziesii",
+  "platform": "ULS",
+  "dataset": "Weiser_2022b",
+  "height": 50.7,
+  "points": 149726,
+  "scale": 0.0015478072450941496,
+  "top5": [
+   [
+    "Pseudotsuga_menziesii",
+    1.0
+   ],
+   [
+    "Larix_decidua",
+    0.0
+   ],
+   [
+    "Abies_alba",
+    0.0
+   ],
+   [
+    "Pinus_sylvestris",
+    0.0
+   ],
+   [
+    "Pinus_resinosa",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "00240",
+  "species": "Eucalyptus_miniata",
+  "platform": "TLS",
+  "dataset": "Luck",
+  "height": 11.3,
+  "points": 54614,
+  "scale": 0.00034556108279671624,
+  "top5": [
+   [
+    "Eucalyptus_miniata",
+    1.0
+   ],
+   [
+    "Fraxinus_angustifolia",
+    0.0
+   ],
+   [
+    "Acer_campestre",
+    0.0
+   ],
+   [
+    "Betula_pendula",
+    0.0
+   ],
+   [
+    "Fraxinus_excelsior",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "13725",
+  "species": "Picea_abies",
+  "platform": "TLS",
+  "dataset": "Frey_2022",
+  "height": 23.1,
+  "points": 405827,
+  "scale": 0.0007054353465376752,
+  "top5": [
+   [
+    "Picea_abies",
+    1.0
+   ],
+   [
+    "Pseudotsuga_menziesii",
+    0.0
+   ],
+   [
+    "Larix_decidua",
+    0.0
+   ],
+   [
+    "Pinus_contorta",
+    0.0
+   ],
+   [
+    "Abies_alba",
+    0.0
+   ]
+  ]
+ },
+ {
+  "id": "03448",
+  "species": "Quercus_robur",
+  "platform": "MLS",
+  "dataset": "LAUTx",
+  "height": 24.5,
+  "points": 286088,
+  "scale": 0.0007482528153324991,
+  "top5": [
+   [
+    "Fagus_sylvatica",
+    1.0
+   ],
+   [
+    "Acer_pseudoplatanus",
+    0.0
+   ],
+   [
+    "Quercus_petraea",
+    0.0
+   ],
+   [
+    "Abies_alba",
+    0.0
+   ],
+   [
+    "Quercus_robur",
+    0.0
+   ]
+  ]
+ }
+]
